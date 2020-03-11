@@ -27,5 +27,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'] ,function(){
         'as' => 'products'
     ]);
 
+    Route::get('/product/create', [ 
+        'uses' => 'ProductsController@create',
+        'as' => 'product.create'
+        ]);
+
 
 });
