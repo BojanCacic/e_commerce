@@ -77,7 +77,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $products = Product::find($id);
+
+        return view('admin.products.edit');
     }
 
     /**
@@ -89,7 +91,26 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+
+        if($request->hasFile('featured'))
+        {
+            $image = $request->image;
+
+            $image_new_name = $time() . $image->getClientOriginalName();
+
+            $image->move('uploads/products', $image_new_name);
+
+            $products->image = $image_new_name;
+        }
+
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->discription = $request->description;
+
+        $product->save();
+
+        return redirect()->route('products');
     }
 
     /**

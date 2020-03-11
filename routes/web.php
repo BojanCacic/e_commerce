@@ -30,7 +30,11 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'] ,function(){
     Route::get('/product/create', [ 
         'uses' => 'ProductsController@create',
         'as' => 'product.create'
-        ]);
+    ]);
 
+    Route::get('/product/edit/{id}', [
+        'uses' => 'ProductsController@edit',
+        'as' => 'product.edit'
+    ]);
 
 });
