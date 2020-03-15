@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin','middleware' => 'auth'] ,function(){
 
     Route::get('/products', [
-        'uses' => 'PostsController@index',
+        'uses' => 'ProductsController@index',
         'as' => 'products'
     ]);
 
@@ -35,6 +35,21 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'] ,function(){
     Route::get('/product/edit/{id}', [
         'uses' => 'ProductsController@edit',
         'as' => 'product.edit'
+    ]);
+
+    Route::post('/product/store', [
+        'uses' => 'ProductsController@store',
+        'as' => 'product.store'
+    ]);
+
+    Route::post('/product/delete', [
+        'uses' => 'ProductsController@destroy',
+        'as' => 'product.delete'
+    ]);
+
+    Route::get('/product/update/{id}', [
+        'uses' => 'ProductsController@update',
+        'as' => 'product.update'
     ]);
 
 });

@@ -27,7 +27,7 @@
                 </thead>
 
                 <tbody>
-                    @if($posts->count() > 0)
+                    @if($products->count() > 0)
                         @foreach ($products as $product)
                         <tr>
                             <td>

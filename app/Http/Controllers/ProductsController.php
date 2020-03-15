@@ -77,9 +77,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $products = Product::find($id);
+        $product = Product::find($id);
 
-        return view('admin.products.edit');
+        return view('admin.products.edit')->with('product', $product);
     }
 
     /**
@@ -106,7 +106,7 @@ class ProductsController extends Controller
 
         $product->name = $request->name;
         $product->price = $request->price;
-        $product->discription = $request->description;
+        $product->description = $request->description;
 
         $product->save();
 
@@ -121,6 +121,10 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+
+        $product->delete();
+
+        return redirect()->back();
     }
 }

@@ -13,19 +13,19 @@
                     <form action="{{route('product.update', ['id' => $product->id ])}}" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <div class="form-group">
-                            <label for="title">Product name</label>
+                            <label for="name">Product name</label>
                             <input type="text" class="form-control" name="name" value="{{ $product->name }}">
                         </div>
                         <div class="form-group">
-                            <label for="featured">Product image</label>
+                            <label for="image">Product image</label>
                             <input type="file"  class="form-control-file" name="image">
                         </div>
                         <div class="form-group">
-                            <label for="title">Product price</label>
+                            <label for="price">Product price</label>
                             <input type="text" class="form-control" name="price" value="{{ $product->price }}">
                         </div>
                         <div class="form-group">
-                            <label for="title">Product description</label>
+                            <label for="description">Product description</label>
                             <input type="text" class="form-control" name="description" value="{{ $product->description }}">
                         </div>
                         

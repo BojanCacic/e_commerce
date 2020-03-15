@@ -14,19 +14,19 @@
                     <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <div class="form-group">
-                            <label for="title">Product name</label>
+                            <label for="name">Product name</label>
                             <input type="text" class="form-control" name="name">
                         </div>
                         <div class="form-group">
-                            <label for="featured">Product image</label>
-                            <input type="file"  class="form-control-file" name="featured">
+                            <label for="image">Product image</label>
+                            <input type="file"  class="form-control-file" name="image">
                         </div>
                         <div class="form-group">
-                            <label for="title">Product price</label>
+                            <label for="price">Product price</label>
                             <input type="text" class="form-control" name="price">
                         </div>
                         <div class="form-group">
-                            <label for="title">Product description</label>
+                            <label for="description">Product description</label>
                             <input type="text" class="form-control" name="description">
                         </div>
                         
