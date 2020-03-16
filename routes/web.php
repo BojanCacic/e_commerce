@@ -47,7 +47,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'] ,function(){
         'as' => 'product.delete'
     ]);
 
-    Route::get('/product/update/{id}', [
+    Route::post('/product/update/{id}', [
         'uses' => 'ProductsController@update',
         'as' => 'product.update'
     ]);
