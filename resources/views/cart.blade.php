@@ -32,7 +32,7 @@
                             <tr class="cart_item">
 
                                 <td class="product-remove">
-                                    <a href="#" class="product-del remove" title="Remove this item">
+                                    <a href="{{ route('cart.delete', ['rowId' => $pdt->rowId])}}" class="product-del remove" title="Remove this item">
                                         <i class="seoicon-delete-bold"></i>
                                     </a>
                                 </td>
@@ -41,7 +41,7 @@
 
                                     <div class="cart-product__item">
                                         <a href="#">
-                                            <img src="{{ asset($pdt->image) }}" alt="product" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image">
+                                            <img src="{{ asset($pdt->model->image) }}" alt="product" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image">
                                         </a>
                                         <div class="cart-product-content">
                                             
