@@ -69,6 +69,14 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'] ,function(){
         'uses' => 'ShoppingController@cart_delete',
         'as' => 'cart.delete'
     ]);
+    Route::get('/cart/decr/{rowId}/{qty}',[
+        'uses' => 'ShoppingController@decr',
+        'as' => 'cart.decr'
+    ]);
+    Route::get('/cart/incr/{rowId}/{qty}',[
+        'uses' => 'ShoppingController@incr',
+        'as' => 'cart.incr'
+    ]);
 
 });
 Auth::routes();
