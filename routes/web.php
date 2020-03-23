@@ -57,6 +57,14 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'] ,function(){
         'uses' => 'ProductsController@update',
         'as' => 'product.update'
     ]);
+    Route::post('/cart/add',[
+        'uses' => 'ShoppingController@add_to_cart',
+        'as' => 'cart.add'
+    ]);
+    Route::get('/cart',[
+        'uses' => 'ShoppingController@cart',
+        'as' => 'cart'
+    ]);
 
 });
 Auth::routes();

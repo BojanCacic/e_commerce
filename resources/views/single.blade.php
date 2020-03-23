@@ -1,19 +1,7 @@
 @extends('layouts.front')
 
 @section('page')
-<div class="container">
-    <div class="row pt120">
-        <div class="col-lg-8 col-lg-offset-2">
-            <div class="heading align-center mb60">
-                <h4 class="h1 heading-title">Udemy E-commerce tutorial</h4>
 
-                <p class="heading-text">Buy books, and we ship to you.
-                   
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="container">
     <div class="row medium-padding120">
@@ -40,17 +28,22 @@
                     <p class="product-details-info-text">{{ $product->description}}
                     </p>
 
-                    <div class="quantity">
-                        <a href="#" class="quantity-minus">-</a>
-                        <input title="Qty" class="email input-text qty text" type="text" value="2">
-                        <a href="#" class="quantity-plus">+</a>
-                    </div>
+                    <form action="{{ route('cart.add')}}" method="POST">
+                        {{ csrf_field() }}
+                        <div class="quantity">
+                            <a href="#" class="quantity-minus">-</a>
+                            <input title="Qty" class="email input-text qty text" name="qty" type="text" value="2">
+                            <a href="#" class="quantity-plus">+</a>
+                        </div>
 
-                    <a href="19_cart.html" class="btn btn-medium btn--primary">
-                        <span class="text">Add to Cart</span>
-                        <i class="seoicon-commerce"></i>
-                        <span class="semicircle"></span>
-                    </a>
+                    <input type="hidden" name="pdt_id" value="{{ $product->id }}">
+    
+                        <button href="19_cart.html" class="btn btn-medium btn--primary">
+                            <span class="text">Add to Cart</span>
+                            <i class="seoicon-commerce"></i>
+                            <span class="semicircle"></span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
