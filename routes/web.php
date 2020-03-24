@@ -81,6 +81,11 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'] ,function(){
         'uses' => 'ShoppingController@rapid_add',
         'as' => 'cart.rapid.add'
     ]);
+    Route::get('/cart/checkout',[
+        'uses' => 'CheckoutController@index',
+        'as' => 'cart.checkout'
+    ]);
+
 
 });
 Auth::routes();
